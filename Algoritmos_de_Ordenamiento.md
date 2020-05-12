@@ -32,9 +32,71 @@ SELECTION SORT
 
 El metodo de ordenamiento por seleccion consiste en encontrar el menor de todos los elementos del arreglo e intercambiarlo con el que esta en la primera posicion. Luego el segundo mas pequeño, y así sucesivamente hasta ordenar todo el arreglo.
 
-RADIXSORT
+	ALGORITMO:
+
+	para i=1 hasta n-1;
+	
+		minimo = i;
+		para j=i+1 hasta n
+			si lista[j] < lista[minimo] entonces
+				minimo = j 
+			fin si
+		fin para
+		intercambiar(lista[i], lista[minimo])
+
+RADIX SORT
+
+Es un algoritmo de ordenamiento que ordena enteros procesando sus digitos de forma individual. Como los enteros tambien pueden representar cadenas de caracteres por ejemplo: nombres o fechas; Sin embargo radix sort no esta limitado solo a los enteros.
+Es muy Rapido en comparacion a otros algoritmos de ordenacion. 
+Técnicamente, la complejidad de radix sort es O(mn), donde:
+	n es el largo de la lista
+	m es la cantidad de dígitos del valor máximo
+Dado que para la mayoría de los casos prácticos n es mucho mayor que m, podemos argumentar que radix sort es O(n)
+
+	ALGORITMO:
+		radix_sort(list):
+		for pos from a to 10;
+			for every item in list:
+				element <- get_element (item,pos)
+				jars[element] <- jars[element] + item;
+			
+			list <- jars[0] + jars[1] + jars[2] + jars[3]
+							+ jars[4] + jars[5] + jars[6]
+							+ jars[7] + jars[8] + jars[9]
+
+
+	RENDIMIENTO: PEOR CASO: O(kn) 
+				MEJOR CASO: O(n)
+
 
 COUNTING SORT
+
+	El ordenamiento por cuentas (counting sort en inglés) es un algoritmo de ordenamiento en el que se cuenta el número de elementos de cada clase para luego ordenarlos. Sólo puede ser utilizado por tanto para ordenar elementos que sean contables (como los números enteros en un determinado intervalo, pero no los números reales, por ejemplo).
+
+	El primer paso consiste en averiguar cuál es el intervalo dentro del que están los datos a ordenar (valores mínimo y máximo). Después se crea un vector de números enteros con tantos elementos como valores haya en el intervalo [mínimo, máximo], y a cada elemento se le da el valor 0 (0 apariciones). Tras esto se recorren todos los elementos a ordenar y se cuenta el número de apariciones de cada elemento (usando el vector que hemos creado). Por último, basta con recorrer este vector para tener todos los elementos ordenados.
+
+	Algoritmo:
+
+	A: Lista Principal de Entrada
+	B: Lista Final y ordenada
+	C:Lista de contabilidad o de frecuencia
+	k: Valor maximo en A
+
+	Ordenamiento_por_Cuenta( A, B, k )
+	for i <-- 1 to k
+		do C[i] <-- 0
+	for j <-- 1 to tamaño[A]
+		do C[ A[j] ] <-- C[ A[j] ] + 1
+	// C[i] contiene ahora el número de elementos igual a 'i'
+	for i <-- 2 to k
+		do C[i] <-- C[i] + C[i-1]
+	// C[i] contiene ahora el número de elementos menor que o igual a 'i'
+	for j <-- tamaño[A] downto 1
+		do B[ C[ A[j] ] ] <-- A[j]
+		C[ A[j] ] <-- C[ A[j] ] - 1
+	
+
+
 MERGESORT
 
 El método Quicksort divide la estructura en dos y ordena cada mitad recursivamente. El caso del MergeSort es el opuesto, es decir, en éste método de unen dos estructuras ordenadas para formar una sola ordenada correctamente.
