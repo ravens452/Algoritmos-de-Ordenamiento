@@ -35,7 +35,7 @@ El metodo de ordenamiento por seleccion consiste en encontrar el menor de todos 
 	ALGORITMO:
 
 	para i=1 hasta n-1;
-	
+
 		minimo = i;
 		para j=i+1 hasta n
 			si lista[j] < lista[minimo] entonces
@@ -185,20 +185,3 @@ a i n o t s r
 a i n o r s t
 
 
-
-Algoritmos de Ordenamiento
-Volver a: Semana 4
-investigar y analizar los siguientes algoritmos de ordenamiento:
-
-insertionsort
-selectionsort
-radixsort
-counting sort
-mergesort
-quicksort
-Debe entregar un informe donde:
-
-Explique detalladamente el funcionamiento del algoritmo.
-Explique el tiempo de ejecución en el mejor y peor caso.
-Colocar en anexo el código de cada algoritmo y adicionalmente el link hacia su repositorio donde debe estar el algoritmo.
-SALUDOS.
